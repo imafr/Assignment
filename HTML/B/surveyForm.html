@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Survey form</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-container">
+            <h2>Customer Survey Form</h2>
+            <div class="form-container">
+                <form action="#">
+                    <div class="row">
+                        <div class="form-element">
+                            <label for="">First name</label>
+                            <input id="inputFirstName" onchange="handleChange('firstName','inputFirstName')"
+                                type="text">
+                                <span style="color: red; font-size: 10px;" id="errorFirstName" style="display: none;"></span>
+                        </div>
+                        <div class="form-element">
+                            <label for="">Last name</label>
+                            <input id="inputLastName" onchange="handleChange('lastName','inputLastName')" type="text">
+                            <span style="color: red; font-size: 10px;" id="errorLastName" style="display: none;"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-element">
+                        <label for="">Date of birth</label>
+                        <input id="inputdob" onchange="handleChange('dob','inputdob')" type="date" name="" id="">
+                        <span style="color: red; font-size: 10px;" id="errordob" style="display: none;"></span>
+                    </div>
+                    <div class="row">
+                        <div class="form-element">
+                            <label for="">Country</label>
+                            <select id="inputCountry" onchange="handleChange('country','inputCountry')">
+                                <option value="">Select a Value</option>
+                                <option value="India">India</option>
+                                <option value="China">China</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                            </select>
+                            <span style="color: red; font-size: 10px;" id="errorCountry"></span>
+                        </div>
+
+                        <div
+                            style="display: flex;flex-direction: column;width: 72%;align-items: center;justify-content: center;">
+                            <label for="">Gender</label>
+                            <div style="display: flex;flex-direction: row; width: 100%;justify-content: space-evenly;">
+                                <div style="display: flex;flex-direction: row;">
+                                    <input onchange="handleCheck(1,event)" type="checkbox" id="Male" name="Male">
+                                    <label for="Male">Male</label>
+                                </div>
+                                <div style="display: flex;flex-direction: row;">
+                                    <input onchange="handleCheck(0,event)" type="checkbox" id="Female" name="Female">
+                                    <label for="Female">Female</label>
+                                </div>
+                            </div>
+                            <span style="color: red; font-size: 10px;" id="errorGender" style="display: none;"></span>
+                        </div>
+                    </div>
+                    <div class="form-element">
+                        <label for="">Profession</label>
+                        <input id="inputProfession" onchange="handleChange('profession','inputProfession')" type="text">
+                        <span style="color: red; font-size: 10px;" id="errorProfession" style="display: none;"></span>
+                    </div>
+                    <div class="form-element">
+                        <label for="">Email</label>
+                        <input id="inputEmail" onchange="handleChange('email','inputEmail')" type="text">
+                        <span style="color: red; font-size: 10px;" id="errorEmail" style="display: none;"></span>
+                    </div>
+                    <div class="form-element">
+                        <label for="">Mobile</label>
+                        <input id="inputMobile" onchange="handleChange('mobile','inputMobile')" type="text">
+                        <span style="color: red; font-size: 10px;" id="errorMobile" style="display: none;"></span>
+                    </div>
+                    <div class="row">
+                        <div class="form-element">
+                            <button type="submit">Reset</button>
+                        </div>
+                        <div id="submit" class="form-element">
+                            <button id="open-popup">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="popup" class="popup-container">
+                    <!-- Popup content -->
+                    <div class="popup-content">
+                        <span class="close-button" id="close-popup">&times;</span>
+                        <p>First Name : <span id="firstName"></span></p>
+                        <p>Last Name : <span id="lastName"></span></p>
+                        <p>Date of Birth : <span id="dob"></span></p>
+                        <p>Country : <span id="country"></span></p>
+                        <p>Gender : <span id="gender"></span></p>
+                        <p>Profession : <span id="profession"></span></p>
+                        <p>Email : <span id="email"></span></p>
+                        <p>Mobile : <span id="mobile"></span></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
